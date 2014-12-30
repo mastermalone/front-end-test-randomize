@@ -125,7 +125,7 @@
 		setHeight: function(el, parentEl){
 			var targetEl = document.getElementById(el);
 			var prntEl = document.getElementById(parentEl);
-			var i, tempArr, heightArr = [];
+			var i, tempArr, tempArrRev, heightArr = [];
 			//Loop throght parentEl and get all child element hieghts
 			//Push the heights into an array
 			for(i = 0; i < prntEl.children.length; i++){
@@ -133,7 +133,8 @@
 			}
 			//Assign the sorted value of the heights to tempArr
 			tempArr = heightArr.sort();
-			targetEl.style.height = tempArr[tempArr.length -1]+"px";
+			tempArrRev = tempArr.reverse();
+			targetEl.style.height = tempArrRev[0]+"px";
 		}
 	};
 	LampsUtils.initEvent("btn-random");
